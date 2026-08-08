@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pencapaian & Prestasi — Muhammad Rasyid Ridho</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0f19;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #6ee7ff;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #6ee7ff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 50px;
+      background:
+        radial-gradient(circle at top, rgba(60, 180, 255, 0.18), transparent 40%),
+        #0b0f19;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(110,231,255,0.4);
+      border-radius: 50px;
+      color: #6ee7ff;
+      margin-bottom: 20px;
+      font-size: 14px;
+      background: rgba(110,231,255,0.05);
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 75px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #6ee7ff;
+    }
+
+    .hero p {
+      color: #aeb6c5;
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 13px 25px;
+      border-radius: 10px;
+      background: #6ee7ff;
+      color: #071018;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(110,231,255,0.2);
+    }
+
+    /* SECTION */
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 100px 25px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #8993a5;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #263242;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 45px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: appear 0.8s forwards;
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes appear {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 9px;
+      top: 5px;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background: #0b0f19;
+      border: 3px solid #6ee7ff;
+      box-shadow: 0 0 15px rgba(110,231,255,0.5);
+    }
+
+    .card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(110,231,255,0.35);
+      background: rgba(255,255,255,0.055);
+    }
+
+    .year {
+      color: #6ee7ff;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #aeb6c5;
+    }
+
+    /* PROFILE */
+    .profile {
+      text-align: center;
+    }
+
+    .profile-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 35px;
+      border-radius: 20px;
+      background: linear-gradient(
+        145deg,
+        rgba(110,231,255,0.08),
+        rgba(255,255,255,0.025)
+      );
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #6ee7ff;
+      color: #071018;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .profile-box h2 {
+      margin-bottom: 8px;
+    }
+
+    .profile-box p {
+      color: #aeb6c5;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #70798a;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .nav-container {
+        padding: 15px;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 75px 18px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .card h3 {
+        font-size: 19px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">R<span>R</span></div>
+
+      <div>
+        <a href="#home">Home</a>
+        <a href="#prestasi">Prestasi</a>
+        <a href="#profil">Profil</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="badge">
+        Personal Portfolio
+      </div>
+
+      <h1>
+        Pencapaian &<br>
+        <span>Prestasi</span>
+      </h1>
+
+      <p>
+        Sebuah perjalanan yang berisi pengalaman,
+        pencapaian, kepemimpinan, dan prestasi yang
+        telah diraih melalui proses belajar dan kerja keras.
+      </p>
+
+      <a href="#prestasi" class="btn">
+        Lihat Perjalanan ↓
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- PRESTASI -->
+  <section id="prestasi">
+
+    <div class="section-title">
+      <h2>Perjalanan Saya</h2>
+      <p>Beberapa pencapaian dan pengalaman yang telah saya raih.</p>
+    </div>
+
+    <div class="timeline">
+
+      <!-- 1 -->
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="card">
+
+          <div class="year">
+            21–22 Juni 2025
+          </div>
+
+          <h3>
+            Gladian Pimpinan Sangga (DIAPINSA)
+          </h3>
+
+          <p>
+            Mengikuti kegiatan Gladian Pimpinan Sangga
+            (DIAPINSA) yang dilaksanakan di Martapura.
+            Kegiatan ini menjadi salah satu pengalaman
+            dalam mengembangkan kemampuan kepemimpinan
+            dan kepramukaan.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 2 -->
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="card">
+
+          <div class="year">
+            17–19 Juli 2025
+          </div>
+
+          <h3>
+            Pramuka Penegak Bantara
+          </h3>
+
+          <p>
+            Berhasil mencapai tingkat Pramuka Penegak
+            Bantara melalui rangkaian kegiatan dan proses
+            yang membutuhkan kedisiplinan, tanggung jawab,
+            serta kemampuan dalam berbagai bidang kepramukaan.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 3 -->
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="card">
+
+          <div class="year">
+            Periode 2026/2027
+          </div>
+
+          <h3>
+            Pradana Putra Ambalan Demang Lehman
+          </h3>
+
+          <p>
+            Dipercaya menjabat sebagai Pradana Putra
+            Ambalan Demang Lehman – Bulan Jihad untuk
+            periode 2026/2027. Jabatan ini menjadi
+            pengalaman dalam memimpin, mengoordinasikan,
+            dan bertanggung jawab terhadap kegiatan ambalan.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 4 -->
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="card">
+
+          <div class="year">
+            2025
+          </div>
+
+          <h3>
+            🥇 Juara 1 Kejuaraan Daerah Pencak Silat
+          </h3>
+
+          <p>
+            Meraih Juara 1 pada Kejuaraan Daerah
+            Pencak Silat tahun 2025 dalam kategori
+            Regu Putra. Pencapaian ini diraih melalui
+            latihan yang konsisten, disiplin, dan kerja keras.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 5 -->
+      <div class="timeline-item">
+
+        <div class="timeline-dot"></div>
+
+        <div class="card">
+
+          <div class="year">
+            2026
+          </div>
+
+          <h3>
+            🥇 Juara 1 Kejuaraan Daerah Pencak Silat
+          </h3>
+
+          <p>
+            Berhasil mempertahankan pencapaian dengan
+            kembali meraih Juara 1 pada Kejuaraan Daerah
+            Pencak Silat tahun 2026 dalam kategori
+            Regu Putra.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROFIL -->
+  <section id="profil" class="profile">
+
+    <div class="section-title">
+      <h2>Tentang Saya</h2>
+      <p>Perjalanan, pengalaman, dan semangat untuk terus berkembang.</p>
+    </div>
+
+    <div class="profile-box">
+
+      <div class="avatar">
+        MRR
+      </div>
+
+      <h2>Muhammad Rasyid Ridho</h2>
+
+      <p>
+        Pelajar yang aktif dalam kegiatan Pramuka dan
+        pencak silat serta memiliki ketertarikan dalam
+        pengembangan diri, kepemimpinan, dan berbagai
+        kegiatan kreatif.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Muhammad Rasyid Ridho — Personal Portfolio
+  </footer>
+
+
+</body>
+</html>
