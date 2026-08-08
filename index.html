@@ -266,6 +266,35 @@
       color: #aeb6c5;
     }
 
+    /* INSTAGRAM */
+    .instagram-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 25px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+      );
+      transition: 0.3s ease;
+    }
+
+    .instagram-btn:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(253,29,29,0.25);
+    }
+
+    .instagram-icon {
+      font-size: 20px;
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -277,6 +306,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 600px) {
+
       .nav-container {
         padding: 15px;
       }
@@ -318,19 +348,24 @@
   <!-- NAVBAR -->
   <nav>
     <div class="nav-container">
-      <div class="logo">R<span>R</span></div>
+
+      <div class="logo">
+        R<span>R</span>
+      </div>
 
       <div>
         <a href="#home">Home</a>
         <a href="#prestasi">Prestasi</a>
         <a href="#profil">Profil</a>
       </div>
+
     </div>
   </nav>
 
 
   <!-- HERO -->
   <header class="hero" id="home">
+
     <div class="hero-content">
 
       <div class="badge">
@@ -353,6 +388,7 @@
       </a>
 
     </div>
+
   </header>
 
 
@@ -360,11 +396,18 @@
   <section id="prestasi">
 
     <div class="section-title">
+
       <h2>Perjalanan Saya</h2>
-      <p>Beberapa pencapaian dan pengalaman yang telah saya raih.</p>
+
+      <p>
+        Beberapa pencapaian dan pengalaman yang telah saya raih.
+      </p>
+
     </div>
 
+
     <div class="timeline">
+
 
       <!-- 1 -->
       <div class="timeline-item">
@@ -390,6 +433,7 @@
           </p>
 
         </div>
+
       </div>
 
 
@@ -416,6 +460,7 @@
           </p>
 
         </div>
+
       </div>
 
 
@@ -443,6 +488,7 @@
           </p>
 
         </div>
+
       </div>
 
 
@@ -469,6 +515,7 @@
           </p>
 
         </div>
+
       </div>
 
 
@@ -495,7 +542,9 @@
           </p>
 
         </div>
+
       </div>
+
 
     </div>
 
@@ -506,9 +555,15 @@
   <section id="profil" class="profile">
 
     <div class="section-title">
+
       <h2>Tentang Saya</h2>
-      <p>Perjalanan, pengalaman, dan semangat untuk terus berkembang.</p>
+
+      <p>
+        Perjalanan, pengalaman, dan semangat untuk terus berkembang.
+      </p>
+
     </div>
+
 
     <div class="profile-box">
 
@@ -516,7 +571,9 @@
         MRR
       </div>
 
-      <h2>Muhammad Rasyid Ridho</h2>
+      <h2>
+        Muhammad Rasyid Ridho
+      </h2>
 
       <p>
         Pelajar yang aktif dalam kegiatan Pramuka dan
@@ -525,6 +582,18 @@
         kegiatan kreatif.
       </p>
 
+
+      <!-- INSTAGRAM -->
+      <a
+        class="instagram-btn"
+        href="https://www.instagram.com/calon_senshu?igsh=OWlvNHZqbGVuN2dz"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="instagram-icon">◎</span>
+        Akun Instagram
+      </a>
+
     </div>
 
   </section>
@@ -532,7 +601,11 @@
 
   <!-- FOOTER -->
   <footer>
-    © 2026 Muhammad Rasyid Ridho — Personal Portfolio
+
+    © 2026 Muhammad Rasyid Ridho
+    <br>
+    Personal Portfolio
+
   </footer>
 
 
